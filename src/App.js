@@ -9,6 +9,12 @@ class App extends Component {
     locations: []
   }
 
+  //Make add, delete, update methods
+
+  deleteLocation = () => {
+    
+  }
+
   componentDidMount(){
     this.getLocations()
   }
