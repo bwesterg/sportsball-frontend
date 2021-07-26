@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import LocationContainer from './components/LocationContainer';
-const locationsURL = "http://localhost:3000/locations"
+import LocationForm from './components/LocationForm';
+const locationsURL = "http://localhost:3000/locations";
 
 class App extends Component {
 
@@ -26,10 +27,17 @@ class App extends Component {
   }
 
 
+  addLocation = (newLocation) => {
+    this.setState({
+      locations: [...this.state.locations, newLocation]
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sportsball App</h1>
+        <LocationForm addLocation={this.addLocation} />
         <LocationContainer locations={this.state.locations} />
       </div>
     );
