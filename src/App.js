@@ -31,6 +31,14 @@ class App extends Component {
     this.setState({
       locations: [...this.state.locations, newLocation]
     })
+
+    fetch(locationsURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newLocation)
+    })
   }
 
   render() {
