@@ -39,7 +39,13 @@ body {
   margin-top: 2rem;
 }
 
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
 .capital-input {
   display: flex;
   justify-content: center;
 }
+

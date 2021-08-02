@@ -41,12 +41,20 @@ class App extends Component {
     })
   }
 
+  deleteLocation = (id) => {
+    let filteredLocations = this.state.locations.filter(location => location.id !== id)
+    this.setState({
+      locations: filteredLocations,
+    })
+    fetch(locationsURL + "/" + id, {method: "DELETE"})
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sportsball App</h1>
         <LocationForm addLocation={this.addLocation} />
-        <LocationContainer locations={this.state.locations} />
+        <LocationContainer deleteLocation={this.deleteLocation} locations={this.state.locations} />
       </div>
     );
   }
