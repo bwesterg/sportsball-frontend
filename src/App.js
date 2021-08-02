@@ -10,12 +10,6 @@ class App extends Component {
     locations: []
   }
 
-  //Make add, delete, update methods
-
-  deleteLocation = () => {
-    
-  }
-
   componentDidMount(){
     this.getLocations()
   }
@@ -25,7 +19,6 @@ class App extends Component {
       .then(response => response.json())
       .then(locations => this.setState({locations}))
   }
-
 
   addLocation = (newLocation) => {
     this.setState({

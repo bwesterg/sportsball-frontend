@@ -10,7 +10,6 @@ const initialState = {
     total_teams: 0, 
 }
 
-
 export default class LocationForm extends Component{
 
     state = initialState
