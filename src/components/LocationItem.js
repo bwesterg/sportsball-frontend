@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import LocationForm from './LocationForm';
 
-export default function LocationItem({id, name, baseball, basketball, football, hockey, total_teams, capital, deleteLocation}){
+export default function LocationItem({id, name, baseball, basketball, football, hockey, total_teams, capital, deleteLocation, updateLocation}){
 
     const location = {id, name, baseball, basketball, football, hockey, total_teams, capital}
     const [isToggled, setIsToggled] = useState(false)
@@ -21,5 +21,10 @@ export default function LocationItem({id, name, baseball, basketball, football, 
         </li>
     )
 
-    return isToggled ? <LocationForm location={location} /> : locationCard()
+    return isToggled 
+        ? <LocationForm 
+            handleToggle={handleToggle} 
+            submitAction={updateLocation} 
+            location={location} 
+        /> : locationCard()
 }

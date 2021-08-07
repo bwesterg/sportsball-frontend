@@ -35,7 +35,9 @@ class App extends Component {
   }
 
   updateLocation = (updatedLocation) => {
+    let locations = this.state.locations.map(location => location.id === updatedLocation.id ? updatedLocation : location)
     
+    this.setState({ locations })
   }
 
   deleteLocation = (id) => {
@@ -51,7 +53,7 @@ class App extends Component {
       <div className="App">
         <h1>Sportsball App</h1>
         <LocationForm addLocation={this.addLocation} />
-        <LocationContainer deleteLocation={this.deleteLocation} locations={this.state.locations} />
+        <LocationContainer updateLocation={this.updateLocation} deleteLocation={this.deleteLocation} locations={this.state.locations} />
       </div>
     );
   }
