@@ -44,6 +44,11 @@ body {
   color: white;
 }
 
+.edit-button {
+  background-color: lightskyblue;
+  color: white;
+}
+
 .capital-input {
   display: flex;
   justify-content: center;

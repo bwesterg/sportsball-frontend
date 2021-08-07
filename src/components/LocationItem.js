@@ -14,6 +14,7 @@ export default function LocationItem({id, name, baseball, basketball, football, 
             <h4>Total professional teams: {total_teams}</h4>
             <h4>Any teams use state capital in their title? {capital}</h4>
             <button onClick={handleClick} className="delete-button">DELETE LOCATION</button>
+            <button className="edit-button">EDIT LOCATION</button>
         </li>
     )
 }
