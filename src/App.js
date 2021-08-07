@@ -34,6 +34,10 @@ class App extends Component {
     })
   }
 
+  updateLocation = (updatedLocation) => {
+    
+  }
+
   deleteLocation = (id) => {
     let filteredLocations = this.state.locations.filter(location => location.id !== id)
     this.setState({

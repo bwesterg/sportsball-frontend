@@ -3,6 +3,7 @@ import LocationForm from './LocationForm';
 
 export default function LocationItem({id, name, baseball, basketball, football, hockey, total_teams, capital, deleteLocation}){
 
+    const location = {id, name, baseball, basketball, football, hockey, total_teams, capital}
     const [isToggled, setIsToggled] = useState(false)
     const handleClick = (event) => deleteLocation(id)
     const handleToggle = (event) => setIsToggled(!isToggled)
@@ -20,5 +21,5 @@ export default function LocationItem({id, name, baseball, basketball, football, 
         </li>
     )
 
-    return isToggled ? <LocationForm /> : locationCard()
+    return isToggled ? <LocationForm location={location} /> : locationCard()
 }

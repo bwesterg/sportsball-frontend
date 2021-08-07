@@ -14,6 +14,23 @@ export default class LocationForm extends Component{
 
     state = initialState
 
+    componentDidMount(){
+        const{location} = this.props
+        if(this.props.location){
+            const{id, name, baseball, basketball, football, hockey, capital, total_teams} = location
+            this.setState({
+                id,
+                name,
+                baseball,
+                basketball,
+                football,
+                hockey,
+                capital,
+                total_teams
+            })
+        }
+    }
+
     handleChange = (event) => {
         let {name, value, checked} = event.target
 
@@ -30,12 +47,12 @@ export default class LocationForm extends Component{
     }
 
     render() {
-        const {location, baseball, basketball, football, hockey, capital, total_teams} = this.state
+        const {name, baseball, basketball, football, hockey, capital, total_teams} = this.state
         return(
             <form className="location-form" onSubmit={this.handleSubmit}>
-                <h2>Add a new Location</h2>
+                {this.props.location ? <h2>Edit Location</h2> : <h2>Add a new Location</h2>}
                 <label>Name (US State)</label>
-                <input type="text" name="name" value={location} onChange={this.handleChange}/>
+                <input type="text" name="name" value={name} onChange={this.handleChange}/>
                 <label>Baseball Team(s)</label>
                 <input type="text" name="baseball" value={baseball} onChange={this.handleChange}/>
                 <label>Basketball Team(s)</label>
