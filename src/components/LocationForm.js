@@ -43,7 +43,11 @@ export default class LocationForm extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addLocation(this.state)
+        this.props.submitAction(this.state)
+        if(this.props.handleToggle){
+            this.props.handleToggle()
+            
+        }
     }
 
     render() {
