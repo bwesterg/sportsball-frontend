@@ -1,6 +1,5 @@
 import React from 'react';
 import LocationItem from './LocationItem'
-
 export default function LocationContainer({locations, deleteLocation, updateLocation}) {
 
     const showLocations = () => {

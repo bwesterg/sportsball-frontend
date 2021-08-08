@@ -33,9 +33,7 @@ export default class LocationForm extends Component{
 
     handleChange = (event) => {
         let {name, value, checked} = event.target
-
         value = (name === "capital") ? checked : value
-
         this.setState({
             [name]: value 
         })
